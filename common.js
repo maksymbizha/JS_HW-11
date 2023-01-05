@@ -1,45 +1,23 @@
 
+const str = prompt('Шоб створити масси чисел, введіть одним числом без пробілів та ком.');
 
-/* создаем массив */
-// let array = [1, 2, 6, 12, 31, 53, 102, 150, 183, 184]
+const array = Array.from(str);
 
-const array = [
-    prompt('Заполни первый элемент массива'),
-    prompt('Заполни второй элемент массива'),
-    prompt('Заполни третий элемент массива'),
-    prompt('Заполни четвертый элемент массива'),
-    prompt('Заполни пятый элемент массива'),
-    prompt('Заполни шестой элемент массива'),]
-
-console.log(array)
+alert(`Ви створили массив = [${array.join(',  ')}]`)
 
 
-/* создаем функцию для сравнения элемнтов массива*/
-// function f (a, b) {
-//     if (a > b ) {
-//         return 1;
-//     } else if (a < b ) {
-//         return -1;
-//     } else {
-//         return 0;
-//     }
-// }
+array.sort( (a, b) => a - b );
 
-function f(a, b) {
-    return a > b ? 1 : b > a ? -1 : 0;
-}
+// array.sort(f);
+alert(`Ви відсортували массив = [${array.join(',  ')}]`)
+
+console.log(array);
+
+const arrDel = array.splice(1,3 )
 
 
-/* сортивую массив используя функцию через метод .sort() */
-array.sort(f);
+alert(`Видалили з массиву з 2 по 4 = [${arrDel.join(',  ')}]`)
 
+alert(`Массив який ми отримали  = [${array.join(',  ')}]`)
 
-/*выводим результат в консоль */
-console.log(array)
-
-/* создаем переменную newArray, методом .slice вырезаем из array со 2 по 4 элемент и сохраняем в newArray */
-const newArray = array.slice(2,5 )
-
-/* выводим в резулятат через алерт */
-
-alert(newArray.join('  '))
+console.log(arrDel)
